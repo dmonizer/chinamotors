@@ -1,0 +1,28 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Chinese engine code decoder</title>
+  <meta name="description" content="Simple decoder to make some sense of chinese engine codes">
+  <meta name="author" content="dmonizer">
+
+  <meta property="og:title" content="Chinese engine code decoder">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.sitepoint.com/a-basic-html5-template/">
+  <meta property="og:description" content="Simple decoder to make some sense of chinese engine codes">
+    
+</head>
+
+<body>
+  <!-- your content here... -->  
+  <p><input type="text" id="engineCode"><button id="go">decode</button></p>
+  <p id="result"></p>
+  <script src="script.js"></script>
+  <script>
+  document.getElementById("go").click = (ev)=>document.getElementById("result").innerHTML = decode(document.getElementById("engineCode").value);
+  </script>
+</body>
+</html>
