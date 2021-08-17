@@ -22,11 +22,17 @@
   <p id="result"></p>
   <script src="script.js"></script>
   <script>
+    const formatOutput = (object)=>{
+      let output = "";
+      Object.keys(object).map((key)=>output = output + `${key}: <b>${object[key]}</b><br>`)
+      return output;
+    }
+    
     const doDecode = () => {
       const resultElement= document.getElementById("result");
       const engineCode = document.getElementById("engineCode").value;
       if (engineCode) {
-        resultElement.innerHTML = JSON.stringify(decode(engineCode));
+        resultElement.innerHTML = formatOutput(decode(engineCode));
       }
     }
     document.getElementById("go").onclick = doDecode
