@@ -18,12 +18,16 @@
 
 <body>
   <!-- your content here... -->  
-  <p><input type="text" id="engineCode"><button id="go" onclick="doDecode">decode</button></p>
+  <p><input type="text" id="engineCode"><button id="go">decode</button></p>
   <p id="result"></p>
   <script src="script.js"></script>
   <script>
-    const doDecode = () {
-      document.getElementById("result").innerHTML = JSON.stringify(decode(document.getElementById("engineCode").value));
+    const doDecode = () => {
+      const resultElement= document.getElementById("result");
+      const engineCode = document.getElementById("engineCode").value;
+      if (engineCode) {
+        resultElement.innerHTML = JSON.stringify(decode(engineCode));
+      }
     }
   </script>
 </body>
